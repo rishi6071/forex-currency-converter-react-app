@@ -23,12 +23,12 @@ const Forex = () => {
     });
 
     let sourceAmount, targetAmount;
-    if (amountSourceTargetCurrency) {
-        sourceAmount = amount;
-        targetAmount = (amount / exchangeRate).toFixed(4);
-    } else {
+    if (!amountSourceTargetCurrency) {
         targetAmount = amount;
-        sourceAmount = (amount * exchangeRate).toFixed(4);
+        sourceAmount = (amount / exchangeRate).toFixed(4);
+    } else {
+        sourceAmount = amount;
+        targetAmount = (amount * exchangeRate).toFixed(4);
     }
 
     // Source & Target Amount Change
@@ -39,7 +39,7 @@ const Forex = () => {
             setAmountSourceTargetCurrency(true);
         }
         else if (type === 'target') {
-            setAmount(event.target.value); 
+            setAmount(event.target.value);
             setAmountSourceTargetCurrency(false);
         }
     }
@@ -93,6 +93,7 @@ const Forex = () => {
             try {
                 let res = await axios.get(url);
                 res = res.data.response;
+                console.log(res);
                 setTime(new Date(res.date).toUTCString());
                 setExchangeRate(res.rates[targetCurrency.code]);
             }
@@ -106,15 +107,17 @@ const Forex = () => {
     return (
         <>
             <div className="container mt-md-4 mt-3">
-                <div className="row px-md-0 px-2">
+                <div className="row px-md-0 px-3">
                     <div className="col-md-6 col-12 offset-md-3" id="forex_box">
                         <div className="row">
-                            <p className="source_heading">{sourceAmount} {sourceCurrency.name} Equals</p>
-                            <h2 className="target_heading">{targetAmount} {targetCurrency.name}</h2>
+                            <p className="source_heading">{'1'} {sourceCurrency.name} Equals</p>
+                            <h3 className="target_heading">
+                                {(exchangeRate !== undefined) ? exchangeRate.toFixed(5) : NaN} {targetCurrency.name}
+                            </h3>
                             <p className="time_heading">{time} · Disclaimer</p>
                         </div>
 
-                        <div className="row mt-4">
+                        <div className="row mt-sm-4 mt-3">
                             {/* Source Currency */}
                             <CurrencyRow type="source"
                                 currencyOptions={currencyOptions}

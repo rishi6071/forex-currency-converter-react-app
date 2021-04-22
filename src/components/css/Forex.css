@@ -10,12 +10,19 @@
 }
 
 #forex_box .source_heading,
+#forex_box .target_heading {
+    text-transform: capitalize;
+}
+
+#forex_box .source_heading,
 #forex_box .time_heading {
     color: gray;
+    line-height: 1.4;
 }
 
 #forex_box .source_heading {
     font-size: x-large;
+    margin-bottom: 5px;
 }
 
 #forex_box .source_heading {
