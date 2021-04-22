@@ -105,12 +105,12 @@ const Forex = () => {
 
     return (
         <>
-            <div className="container mt-md-5 mt-4">
+            <div className="container mt-md-4 mt-3">
                 <div className="row px-md-0 px-2">
                     <div className="col-md-6 col-12 offset-md-3" id="forex_box">
                         <div className="row">
                             <p className="source_heading">{sourceAmount} {sourceCurrency.name} Equals</p>
-                            <h1 className="target_heading">{targetAmount} {targetCurrency.name}</h1>
+                            <h2 className="target_heading">{targetAmount} {targetCurrency.name}</h2>
                             <p className="time_heading">{time} · Disclaimer</p>
                         </div>
 
