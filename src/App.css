@@ -14,3 +14,24 @@ body {
   max-width: 1160px;
   margin: auto !important;
 }
+
+/***** Scrollbar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4c5969;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63, 63, 63);
+}

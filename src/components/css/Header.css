@@ -14,10 +14,10 @@
 
 .brand_name_logo img {
     width: auto;
-    height: 70px;
+    height: 60px;
 }
 
 .brand_name_logo span {
-    color: darkslategrey;
+    color: #3B4552;
     padding-left: 10px;
 }

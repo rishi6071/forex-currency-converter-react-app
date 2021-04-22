@@ -93,7 +93,6 @@ const Forex = () => {
             try {
                 let res = await axios.get(url);
                 res = res.data.response;
-                console.log(res);
                 setTime(new Date(res.date).toUTCString());
                 setExchangeRate(res.rates[targetCurrency.code]);
             }
@@ -117,7 +116,7 @@ const Forex = () => {
                             <p className="time_heading">{time} · Disclaimer</p>
                         </div>
 
-                        <div className="row mt-sm-4 mt-3">
+                        <div className="row mt-sm-4 mt-3 d-flex justify-content-center">
                             {/* Source Currency */}
                             <CurrencyRow type="source"
                                 currencyOptions={currencyOptions}

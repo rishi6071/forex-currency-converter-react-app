@@ -7,7 +7,7 @@ const CurrencyRow = (props) => {
     return (
         <>
             <div className="row">
-                <div className="col-sm-6 col-5">
+                <div className="col-lg-6 col-5">
                     <div className="mb-3">
                         <input type="number" min="0"
                             className="form-control form-control-lg"
@@ -18,7 +18,7 @@ const CurrencyRow = (props) => {
                         />
                     </div>
                 </div>
-                <div className="col-sm-6 col-7">
+                <div className="col-lg-6 col-7">
                     <select
                         className="form-select form-select-lg"
                         aria-label={`${props.type}_currency`}
