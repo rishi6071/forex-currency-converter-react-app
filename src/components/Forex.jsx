@@ -94,6 +94,7 @@ const Forex = () => {
                 let res = await axios.get(url);
                 res = res.data.response;
                 setTime(new Date(res.date).toUTCString());
+                console.log(res);
                 setExchangeRate(res.rates[targetCurrency.code]);
             }
             catch (error) {
@@ -108,10 +109,10 @@ const Forex = () => {
             <div className="container mt-md-4 mt-3">
                 <div className="row px-md-0 px-3">
                     <div className="col-md-6 col-12 offset-md-3" id="forex_box">
-                        <div className="row">
+                        <div className="row pl-2">
                             <p className="source_heading">{'1'} {sourceCurrency.name} Equals</p>
                             <h3 className="target_heading">
-                                {(exchangeRate !== undefined) ? exchangeRate.toFixed(5) : NaN} {targetCurrency.name}
+                                {(exchangeRate === null || exchangeRate === undefined) ? "Not Found" : exchangeRate.toFixed(5)} {targetCurrency.name}
                             </h3>
                             <p className="time_heading">{time} · Disclaimer</p>
                         </div>
