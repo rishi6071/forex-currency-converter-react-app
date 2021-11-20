@@ -1,14 +1,15 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header';
-import Forex from './components/Forex';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Forex from "./components/Forex";
 
 function App() {
   return (
     <>
-      <Header />
-
-      <Forex />
+      <div className="main_component">
+        <Header />
+        <Forex />
+      </div>
     </>
   );
 }

@@ -15,6 +15,13 @@ body {
   margin: auto !important;
 }
 
+.main_component {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /***** Scrollbar Styling */
 /* width */
 ::-webkit-scrollbar {
